@@ -1,0 +1,16 @@
+[package]
+name = "wasmgm"
+authors = ["smokingplaya", "autumngmod"]
+repository = "https://github.com/autumngmod/wasmgm"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+anyhow = "1.0.98"
+env_logger = "0.11.8"
+gmod = "17.0.0"
+log = "0.4.27"
+wasmtime = "31.0.0"

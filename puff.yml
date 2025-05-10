@@ -1,0 +1,11 @@
+variables:
+  serverDir: #{SERVER_DIR}
+  target: i686-unknown-linux-gnu # linux x32
+  platform: # linux | linux64 | win32 | win64
+
+tasks:
+  default:
+    commands:
+      - cargo build --target ${target}
+      - cp ./target/${target}/debug/libwasmgm.so ${serverDir}/garrysmod/lua/bin/gmsv_wasmgm_${platform}.dll
+      - export RUST_LOG=debug && ${serverDir}/start.sh
